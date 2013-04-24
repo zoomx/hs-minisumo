@@ -22,7 +22,7 @@ byte RD0, RD1, RD2, RD3, RD4, RD5, RD6, RD7;//Robot detection
 byte RDM; //Robot detection Matrix
 byte First_RDM=0xFF; //Robot detection Matrix, one loop before
 int buttonState = 0; //Start buttun
-int goPressed = 0;    //button pressed once     
+int goPressed = 0;    //button pressed once
 
 
 void left_f(){
@@ -170,6 +170,7 @@ if ((buttonState == HIGH) or (goPressed == HIGH)) //Start then button presed
     StartTimer5Sec(4700);//Delay into msec after start
     Serial.println(millis());
     goPressed = 1; //set to High after first press    
+    left();
   };
 
 if (First_RDM != RDM)//If no changes into RDM, do nothing
